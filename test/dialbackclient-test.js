@@ -80,6 +80,9 @@ suite.addBatch({
                     },
                     "it works": function(client) {
                         assert.isObject(client);
+                    },
+                    teardown: function(client){
+                        clearInterval(client.cleanup);
                     }
                 }
             }
